@@ -1,0 +1,25 @@
+<html>
+
+<body>
+    <p>Tablas Multiplicar</p>
+    <script type="text/javascript">
+        numero = parseInt(prompt("Introduce un numero", "7"));
+        numero2 = parseInt(prompt("Introduce el limite", "12"));
+        alert("Los numeros introducidos son " + numero + numero2);
+        document.write("<table border=1>");
+        for (tabla = numero; numero <= numero2; numero++) {
+            for (contador = 1; contador <= 10; contador++) {
+
+                if (contador % 2 == 0) {
+                    document.write("<tr bgcolor = 'yellow'><td>" + numero + "</td><td>x<td>" + contador + "</td><td>=<td>" + numero * contador + "</tr>");
+                } else {
+                    document.write("<tr bgcolor = 'red'><td>" + numero + "</td><td>x<td>" + contador + "</td><td>=<td>" + numero * contador + "</tr>");
+                }
+
+            }
+        }
+        document.write("</table>");
+    </script>
+</body>
+
+</html>

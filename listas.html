@@ -1,0 +1,49 @@
+<html>
+<script>
+    espanya = ["Madrid", "Valencia", "Toledo"];
+    francia = ["Paris", "Toulouse", "niza"];
+    portugal = ["Lisboa", "Oporto", "Braga"];
+    function f() {
+        lista = document.getElementById("pais");
+        listadoCiudad = document.getElementById("ciudades");
+        opcion = document.createElement("option");
+        console.log(lista);
+        if (lista.value == "España") {
+            listadoCiudad.length=0;
+            for (i=0; i < espanya.length;i++){
+                opcion.value = espanya[i];
+                opcion.text = espanya[i];
+                listadoCiudad.appendChild(opcion);
+            }    
+        } else if (lista.value == "francia") {
+            listadoCiudad.length=0;
+            for (i=0; i < francia.length;i++){
+                opcion.value = francia[i];
+                opcion.text = francia[i];
+                listadoCiudad.appendChild(opcion);
+            }
+            
+        } else if (lista.value == "portugal") {
+            listadoCiudad.length=0;
+            for (i=0; i < portugal.length;i++){
+                opcion.value = portugal[i];
+                opcion.text = portugal[i];
+                listadoCiudad.appendChild(opcion);
+            }
+        }
+        console.log(listadoCiudad);
+    }
+</script>
+
+<body>
+    <select id="pais" onchange="f()">
+        <option value="España">España</option>
+        <option value="portugal">Portugal</option>
+        <option value="francia">Francia</option>
+    </select>
+    <select id="ciudades">
+         
+    </select>
+</body>
+
+</html>

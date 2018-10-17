@@ -1,0 +1,61 @@
+<html>
+
+<head>
+
+
+</head>
+
+
+<body>
+    <div id="capainicial">
+
+    </div>
+    <div id="c0">
+        <p id="p0">Parrafo1 en capa 0</p>
+        <p id="p1" align="center">Parrafo2 en capa 0</p>
+        <p id="p2">Parrafo3 en capa 0</p>
+    </div>
+
+    <div id="c1">
+        
+    </div>
+
+    <div id="c2">
+    </div>
+</body>
+<script>
+    capa0 = document.getElementById("c0");
+    console.log(capa0);
+
+    hijos = capa0.childNodes;
+
+    console.log(hijos[2]);
+    capas = document.getElementsByTagName("div");
+    console.log(capas);
+    for (i = 0; i < capas.length; i++) {
+        console.log(capas[i].id);
+        alert(capas[i].id);
+    }
+
+    miParrafo = document.createElement("p");
+    miParrafo.id="p1527";
+    console.log(miParrafo);
+    miTexto = document.createTextNode("Mi texto");
+    console.log(miTexto);
+    miParrafo.appendChild(miTexto);
+    console.log(miParrafo);
+    capa = document.getElementById("capainicial");
+    capa.appendChild(miParrafo);
+    p=document.getElementById("p1");
+    console.log(p.getAttribute("align"));
+    p.setAttribute("align","right");
+    console.log(p.attributes.getNamedItem("align"));
+    miimagen = document.createElement("img");
+    miimagen.src="image.jfif";
+    c = document.getElementById("c1");
+    c.appendChild(miimagen);
+    ruta=prompt("Dime imagen");
+    document.getElementsByTagName("img")[0].src=ruta;
+    p=document.getElementById("p1");
+    p.firstChild.nodeValue = "00000000000000000000000000";
+</script>

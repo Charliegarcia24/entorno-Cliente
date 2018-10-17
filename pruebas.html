@@ -1,0 +1,88 @@
+<html>
+    <body>
+        <script>
+            "use strict"
+            function suma(a,b=10){
+                return a+b;
+            }
+
+            function suma2(a,b){
+                if(b==undefined){
+                    return a;
+                }
+                else {
+                    return a+b;
+                }
+            }
+
+
+            function suma3(){
+                console.log(arguments[0]);
+                console.log(arguments[1]);
+            }
+
+
+            let misuma = function suma(a,b){
+                return a+b;
+            };
+
+
+            function mensaje(){
+                console.log("Hola");
+            }
+
+
+            function sum(...datos){
+                console.log(datos.length);
+                console.log(datos[datos.length-1]);
+            }
+
+           // setInterval(mensaje,2000); //funciones como parametro
+
+         //   setInterval(function(){console.log("adios")},2000);
+
+
+            let i;
+       console.log(suma(1,2)); //normal
+
+       console.log(suma(1)); //falta parametro
+
+       console.log(suma(1,2,3)); //mas parametros que en definicion
+
+       console.log(suma2(1,2)); //normal
+
+       console.log(suma2(1)); //falta parametro
+
+       console.log(suma2(1,2,3)); //mas parametros que en definicion
+
+       suma3(1,2,3,4,5,6,7,8,9);
+
+       suma3(1,2);
+
+       sum(1,2,3,4,5,6);
+
+       console.log(misuma); //saca el codigo de la funcion
+       console.log(misuma(5,9)); //saca la ejecución de la función
+
+       let cadena1= 'cadena de texto';
+       let cadena2= `Linea 2 de la cadena de texto 
+       Linea 2 de la Cadena de texto`;
+
+       let cadena3= `Linea 2 de la cadena de texto 
+       Linea 2 de la Cadena de texto`;
+
+       console.log(cadena1);
+       console.log(cadena2);
+       console.log(cadena3); 
+
+       let f  = new Date(2018,8,23);
+
+
+
+
+       console.log(f);
+       console.log(f.getDate());
+       console.log(f.getDay());
+        </script>
+    </body>
+</html>

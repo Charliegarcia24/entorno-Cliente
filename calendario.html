@@ -1,0 +1,61 @@
+<html>
+
+<body>
+    <script>
+      let calendario = "<table border=1> <tr>";
+        let fecha = new Date();
+        let dias;
+        let meses = Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+        let nomDias = Array("L", "M", "X", "J", "V", "S", "D");
+        let diasMes = meses[fecha.getMonth()];
+        let diaUno = fecha.getDay();
+        let blanco = diaUno - 1;
+        fecha.setDate(1);
+        
+
+        if (diaUno == 0) {
+            diaUno = 7;
+        }
+
+        for (let i = 0; i < 7; i++) {
+            calendario += "<th>" + nomDias[i] + "</th>";
+        }
+
+
+        calendario += "<tr>";
+            for(let i = 1; i <= (blanco + diasMes);i++){
+            if(i <= blanco){
+                calendario+="<td>";
+            } else {
+            calendario+="<td>" + (i-blanco);
+        }
+        if(i %7==0){
+            calendario+="<tr>";
+        }
+        }
+        
+        //esto es para pintar los espacios en blanco
+        /*for (let i = 1; i <= blanco; i++) {
+            calendario +="<td>";
+        }
+        // este bucle sirve para pintar la primera fila
+        for(let i = 1; i <= 7-diaUno+1;i++){
+            calendario +="<td>"+i 
+        }
+        
+        calendario += "<tr>";
+        let n = 0; //variable para contar cuantos numeros vamos a pintar
+        for(let i = (7-diaUno+2);i <=diasMes;i++){
+            calendario += "<td>" + i;
+            n++;
+            if(n%7==0){
+                calendario+="<tr>";
+                n = 0;
+            }
+        }*/
+        calendario+="</table>";
+        document.write(calendario);
+    </script>
+</body>
+
+</html>

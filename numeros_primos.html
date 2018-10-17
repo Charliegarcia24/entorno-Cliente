@@ -1,0 +1,23 @@
+<html>
+
+<body>
+    <p>Tablas Multiplicar</p>
+    <script type="text/javascript">
+        n = prompt("Introduce un numero", "7");
+        for (i = n; i >= 1; i--) {
+            div = 0;
+            for (j = i; j >= 1; j--) {
+                if (i % j == 0) {
+                    div++;
+                }
+            }
+                if (div > 2) {
+                    document.write(i,"no es primo"+ "<br />");
+                } else { document.write(i,"es primo" + "<br />"); 
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

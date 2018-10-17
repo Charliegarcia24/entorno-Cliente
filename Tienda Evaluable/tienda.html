@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="estilos.css" type="text/css" />
+    <h1>CATALOGO</h1>
+</head>
+
+<body>
+	<input type="reset" value="vaciar todo"/>
+
+    <div id="contenedor" class="producto1">
+        <div class="articulos" id="1" onclick="f(this)">
+            <img class="portatil1" src="imagenes/notebook.jpg">
+            <legend>Precio: 500€</legend>
+        </div>
+
+        <div class="articulos" id="2" onclick="f(this)">
+            <img class="portatil2" src="imagenes/pc2.jpg">
+            <legend>Precio: 609€</legend>
+        </div>
+        <div class="articulos" id="3" onclick="f(this)">
+            <img class="portatil3" src="imagenes/pc3.jpg">
+            <legend>Precio: 999€</legend>
+        </div>
+        <div class="articulos" id="4" onclick="f(this)">
+            <img class="portatil4" src="imagenes/pc4.jpg">
+            <legend>Precio: 705€</legend>
+        </div>
+    </div>
+    <div id="carrito" class="producto1">
+
+    </div>
+    <br />
+    <br />
+</body>
+<script>
+    function f(articulo) {
+        let unidad = 0;
+        let precio = 0;
+        let contador = 1;
+        if(document.getElementById("c"+articulo.id)==null)
+        {
+            contenedor=document.getElementById("carrito"); //div donde se guardan los articulos
+            original=document.getElementById(articulo.id);    //div en el que se pulsa para comprar
+      
+             artcarrito = document.createElement("div"); //div del articulo a meter en carrito
+             artcarrito.id="c"+articulo.id;
+       
+            imagen=document.createElement("img");   //imagen a crear
+            imagen.src= original.getElementsByTagName("img")[0].src; //ruta de la imagen
+			
+			unidades = document.createElement("p");
+			texto = document.createTextNode("Unidades: " + contador);
+			unidades.appendChild(texto);
+			
+			precio = document.createElement("legend");//esto es para acceder al precio de los elementos
+			textoPrecio = document.getElementsByTagName("legend")[0];
+			precio.appendChild(textoPrecio);
+			
+			borrar = document.createElement("button"); //boton a crear
+			textoBorrar = document.createTextNode("Borrar");
+			borrar.appendChild(textoBorrar);
+			
+			borrarTodo = document.createElement("button"); //boton que borrará todo el pedido
+			textoBorrarTodo = document.createTextNode("Borrar Todo");
+			borrarTodo.appendChild(textoBorrarTodo);
+			
+			precioTotal = document.createElement("p");
+			textoPrecioTotal = document.createTextNode("El precio total es: " + textoPrecio*contador);
+			precioTotal.appendChild(textoPrecioTotal);
+			
+            artcarrito.appendChild(imagen); //añadir imagen al articulo que va al carrito
+			artcarrito.appendChild(precio);
+			artcarrito.appendChild(unidades);
+			artcarrito.appendChild(borrar); artcarrito.appendChild(borrarTodo);
+			contenedor.appendChild(artcarrito); //añadir el articulo al contenedor
+			contenedor.appendChild(precioTotal);
+        }
+        else
+        {
+
+			console.log(contador);
+            //alert ("Ya esta en carrito");
+
+        }
+    }
+    //crear div del articulo
+    //crear p del texto original
+    //if(document.getElementById("C"+articulo.id) == null){
+    //no esta => nuevo al carrito
+    //} else {
+    // esta => modificar
+    //}
+    //document.getElementById("carrito")
+    //artEncarrito = carrito.getElementById("c"+div.id);
+    //tema boton: miboton = document.createElement("button")
+    //textoBoton = document.TextNode("Borrar");
+    //miBoton.id="boton1";
+    //miboton.onclick= fucntion(){}
+    //cuando haga click en el de borrar buscar el parentNode y sacar el parrafo y cambiar las unidades por uno menos
+    //funcion de borrar todo habrá que borrar el padre entero
+    //crear img con el src original
+    //crear p con el precio total que es precio * cantidad
+    //crear dos botones uno para borrar y otro para borrar todos
+</script>
+
+</html>

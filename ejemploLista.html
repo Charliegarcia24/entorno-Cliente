@@ -1,0 +1,51 @@
+<html>
+<script>
+    lista = document.getElementById("alumnos");
+    function seleccion() {
+        lista = document.getElementById("alumnos");
+        console.log(lista.value);
+        for (i = 0; i < lista.length; i++) {
+            texto = lista.options[i].text;
+            valor = lista.options[i].value;
+            seleccionado = lista.options[i].selected;
+            console.log("texto: " + texto + " Valor: " + valor + " Seleccionado: " + seleccionado);
+        }
+
+    }
+
+    function cambia() {
+        lista = document.getElementById("alumnos");
+        lista.options[1].selected = true;
+    }
+
+    function nuevo(){
+        lista = document.getElementById("alumnos");
+    opcion = document.createElement("option");
+    opcion.text = "Mario Martínez";
+    opcion.value = "4";
+    opcion.disabled=true;
+   // lista.appendChild(opcion);
+   // lista.insertBefore(opcion,1);
+   lista.add(opcion,1);
+
+    }
+    function eliminar(){
+        lista = document.getElementById("alumnos");
+        lista.length=0;
+    }
+</script>
+
+<body>
+    <select id="alumnos">
+        <option value="10">Pepe Perez</option>
+        <option value="8">Ana Garcia</option>
+        <option value="5">Luis Gomez</option>
+    </select>
+    <input type="button" value="Ver Listado" onClick="seleccion();">
+    <input type="button" value="Cambiar" onClick="cambia();">
+    <input type="button" value="Nuevo" onClick="nuevo();">
+    <input type="button" value="Borrar" onClick="eliminar();">
+
+</body>
+
+</html>

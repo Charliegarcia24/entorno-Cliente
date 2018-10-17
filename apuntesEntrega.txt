@@ -1,0 +1,22 @@
+tenemos un catalogo donde vamos a mostrar 
+4 productos con foto y precio
+
+En cada div habrá que poner el onclick para que cuando
+pinchemos ejecute una función.
+
+En un lado a de aparecer el precio total del carrito.
+
+Una vez le demos a un elemento nos lo mostrará abajo en otro div
+y el total se recalculará,y en los nuevos div tendrá 2 botones
+uno para borrar y otro para borrar todo.
+
+onclick = f()
+
+cada div tiene un onclick 
+
+f(articulo){
+
+console.log(articulo.id)
+}
+
+cada capa tendra su propio id

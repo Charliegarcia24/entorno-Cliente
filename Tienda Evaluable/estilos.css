@@ -1,0 +1,30 @@
+.producto1{
+    border: 1px solid black;
+    width: 1016;
+}
+
+.portatil1{
+    width: 250px;
+    height: 200px;
+}
+
+.portatil2{
+    width: 250px;
+    height: 200px;
+}
+
+.portatil3{
+    width: 250px;
+    height: 200px;
+}
+
+.portatil4{
+    width: 250px;
+    height: 200px;
+}
+
+.articulos{
+    border-right: 1px solid black;
+    display:inline-block;
+
+}

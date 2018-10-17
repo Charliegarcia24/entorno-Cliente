@@ -1,0 +1,78 @@
+<html>
+
+<body>
+    <script>
+        let calendario = "<table border=1> <tr>";
+        let fecha = new Date();
+        let dias;
+        let meses = Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+        let nomDias = Array("L", "M", "X", "J", "V", "S", "D");
+        let diasMes = meses[fecha.getMonth()];
+        let diaUno = fecha.getDay();
+        let blanco = diaUno - 1;
+        fecha.setDate(1);
+        
+
+        if (diaUno == 0) {
+            diaUno = 7;
+        }
+
+        for (let i = 0; i < 7; i++) {
+            calendario += "<th>" + nomDias[i] + "</th>";
+        }
+
+
+        calendario += "<tr>";
+        //esto es para pintar los espacios en blanco
+        for (let i = 1; i <= blanco; i++) {
+            calendario +="<td>";
+        }
+        // este bucle sirve para pintar la primera fila
+        for(let i = 1; i <= 7-diaUno+1;i++){
+            calendario +="<td>"+i 
+        }
+        
+        calendario += "<tr>";
+        let n = 0; //variable para contar cuantos numeros vamos a pintar
+        for(let i = (7-diaUno+2);i <=diasMes;i++){
+            calendario += "<td>" + i;
+            n++;
+            if(n%7==0){
+                calendario+="<tr>";
+                n = 0;
+            }
+        }
+        calendario+="</table>";
+        document.write(calendario);
+        /*
+        if (fecha.getMonth == (1, 3, 5, 7, 8, 9, 10, 12)) {
+            dias = 31;
+        } else if (fecha.getMonth == (2)) {
+            dias = 28;
+        } else {
+            dias = 31;
+        }
+        
+        for (let i = 0; i < 7; i++) {
+            calendario += "<th>" + nomDias[i] + "</th>";
+        }
+        for (let i = 0; i<1;i++){
+            calendario += "<tr>" + "</tr>";
+        for (let i = 1; i <= dias; i++) {
+            if(i == 8){
+                calendario += "<tr>" + "</tr>";
+            } else if (i == 15){
+                calendario += "<tr>" + "</tr>";
+            } else if (i == 22){
+                calendario += "<tr>" + "</tr>";
+            }
+            else if (i == 29){
+                calendario += "<tr>" + "</tr>";
+            }
+            calendario += "<td>" + i + "</td>";
+
+        }}*/
+    </script>
+</body>
+
+</html>
